@@ -130,19 +130,19 @@ def plot_value_array(i, predictions_array, true_label):
     thisplot[predicted_label].set_color('red')
     thisplot[true_label].set_color('blue')
 
-    # i = 4
-
+ 
 
 for i in range(0, len(test_images)):
     print(i)
-    plt.figure(figsize=(6, 3))
+    plt.figure(figsize=(6, 3)) 
     plt.subplot(1, 2, 1)
     plot_image(i, predictions, test_labels, show_images)
     plt.subplot(1, 2, 2)
     plot_value_array(i, predictions,  test_labels)
+    
     plt.show()
 
-
+print(class_names[np.argmax(predictions[1])])
 test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 
 print('\nTest accuracy:', test_acc)
